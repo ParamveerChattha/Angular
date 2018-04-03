@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule, FormGroup} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ChildCComponent } from './child-c/child-c.component';
@@ -18,8 +18,11 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule
+   ],
+   exports:[
     ReactiveFormsModule,
-  ],
+   ],
   providers: [
     ServiceService,
   ],

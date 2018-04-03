@@ -1,0 +1,17 @@
+    <p>
+      hello
+    </p>
+    <p>
+      {{title}}
+    </p>
+<h4>
+  <ul>
+    <li *ngFor = "let elements of details">
+        {{elements}}
+    </li>
+    
+  </ul>
+  <button (click) = "onSave($event)" class = " btn-primary" [class.btn]="isActive" [class.active]="isActive" [style.backgroundColor]="isActive? 'red': 'white'">
+     submit</button>
+     <input [(ngModel)] = "email" (keyup.enter) = "onkeyup()" />
+</h4>

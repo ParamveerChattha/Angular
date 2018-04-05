@@ -4,9 +4,12 @@
   
     <ul class="list-group">
       <li *ngFor = "let post of getRequest" class="list-group-item">
-        <button 
-          (click)="updatePost(post)"
-           class="btn btn-default btn-sm">update</button>
+         <button 
+            (click)="updatePost(post)"
+             class="btn btn-default btn-sm">update</button>
         {{post.title}}
+          <button 
+            (click) = "deletePost(post)" 
+              class="btn btn-default btn-sm"> delete</button>
       </li>
     </ul>

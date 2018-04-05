@@ -13,6 +13,9 @@ export class PostService {
     return this.http.post(this.url,JSON.stringify(post))
   }
   updatePosts(id){
-    return this.http.patch(this.url+'/'+ input.id , JSON.stringify({isRead: true}))
+    return this.http.patch(this.url+'/'+ id , JSON.stringify({isRead: true}))
+  }
+  deleteposts(post){
+    return this.http.delete(this.url+ '/'+ post.id);
   }
 }

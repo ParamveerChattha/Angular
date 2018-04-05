@@ -10,9 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HttprequestsComponent implements OnInit {
  getRequest : any = [];
-
   constructor(private service: PostService) {}
-
   ngOnInit(){
     //simple get method
     this.service.getPosts()
@@ -30,7 +28,6 @@ createPost(input : HTMLInputElement){
   let post: any = {title : input.value }
   //initializing the value to '' , so in template it automatically gets removed (in input box)
     input.value = '' ;
-
 this.service.createPosts(post)
 .subscribe (response =>
 {
@@ -45,9 +42,7 @@ this.service.createPosts(post)
   this.getRequest.splice(0, 0, post);
   console.log(this.getRequest);
 })
-
 }
-
 updatePost(input)
 {
   //patch is not accepted by all the servers. it depends if it can understand it
@@ -57,11 +52,14 @@ this.service.updatePosts(input.id)
 })
 //post will update all the inputs, without any condition
 //this.http.put(this.url, JSON.stringify(input));
-
 }
-
-
-  
-
+deletePost(input)
+{
+  this.service.deleteposts(input)
+  .subscribe(response =>{
+    let index = this.getRequest.indexOf(input);
+    this.getRequest.splice(index,1);
+  })
+}
 }
  
